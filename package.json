@@ -1,0 +1,39 @@
+{
+  "name": "tsl-umd",
+  "version": "1.0.1",
+  "description": "TSL-UMD Protocol Library for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "npm",
+    "nodejs",
+    "tally",
+    "tsl",
+    "umd"
+  ],
+  "author": "William Viker <william.viker@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.6.0",
+    "dgram": "^1.0.1",
+    "events": "^1.1.1",
+    "iecstruct": "0.0.8",
+    "packet": "0.0.6",
+    "util": "^0.10.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willosof/tsl-umd.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willosof/tsl-umd/issues"
+  },
+  "homepage": "https://github.com/willosof/tsl-umd#readme"
+}
