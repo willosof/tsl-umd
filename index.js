@@ -32,6 +32,7 @@ function tslumd(port) {
 
 		self.parser.extract("tsl", function (res) {
 			res.label = new Buffer(res.label).toString();
+            		res.sender = rinfo.address;
 			self.emit('message', res);
 		});
 		self.parser.parse(msg);
