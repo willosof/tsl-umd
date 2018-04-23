@@ -25,6 +25,7 @@ umd.on('message', function(tally) {
 
 ### Tested OK with
 * tslumd_1.0 on Ross Carbonite mixers
+* [Axon Cerebrum](https://www.axon.tv/productgroup/cerebrum/)
 
 ### Git
 * [https://github.com/willosof/tsl-umd](https://github.com/willosof/tsl-umd)
