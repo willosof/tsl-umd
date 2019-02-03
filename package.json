@@ -1,10 +1,9 @@
 {
   "name": "tsl-umd",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "TSL-UMD Protocol Library for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
     "start": "node index.js"
   },
   "keywords": [
@@ -31,5 +30,5 @@
   "bugs": {
     "url": "https://github.com/willosof/tsl-umd/issues"
   },
-  "homepage": "https://github.com/willosof/tsl-umd#readme"
+  "homepage": "https://www.npmjs.com/package/tsl-umd"
 }
