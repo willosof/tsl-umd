@@ -14,38 +14,35 @@ var packet       = require('packet');
 
 
 function tslumd(port) {
-  var self = this;
+
+	var self = this;
+
 	self.port = port;
-
 	self.parser = packet.createParser();
-
-  self.server = dgram.createSocket('udp4');
+	self.server = dgram.createSocket('udp4');
 	self.parser.packet('tsl', 'b8{x1, b7 => address},b8{x2, b2 => brightness, b1 => tally4, b1 => tally3, b1 => tally2, b1 => tally1 }, b8[16] => label');
 
-  self.server.on('error', (err) => {
+	self.server.on('error', (err) => {
 		debug('error',err);
-    throw err;
-    self.server.close();
-  });
+		throw err;
+		self.server.close();
+	});
 
-  self.server.on('message', (msg, rinfo) => {
-
+	self.server.on('message', (msg, rinfo) => {
 		self.parser.extract("tsl", function (res) {
 			res.label = new Buffer(res.label).toString();
-            		res.sender = rinfo.address;
+			res.sender = rinfo.address;
 			self.emit('message', res);
 		});
 		self.parser.parse(msg);
+	});
 
-  });
+	self.server.on('listening', () => {
+		var address = self.server.address();
+		console.log(`server listening ${address.address}:${address.port}`);
+	});
 
-  self.server.on('listening', () => {
-    var address = self.server.address();
-    console.log(`server listening ${address.address}:${address.port}`);
-  });
-
-  self.server.bind(self.port);
-
+	self.server.bind(self.port);
 
 }
 
