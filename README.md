@@ -20,7 +20,7 @@ var umd = new UMD(5001);
 
 umd.on('message', function(tally) {
 	console.log("Tally update:", tally);
-);
+});
 ```
 
 ### Tested OK with
